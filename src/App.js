@@ -6,11 +6,7 @@ import "./App.css";
 function App() {
   const [navVisible, showNavbar] = useState(false);
 
-  return (
-    <>
-      <Navbar visible={navVisible} show={showNavbar} size={cart.length} />
-    </>
-  );
+  return <Navbar visible={navVisible} show={showNavbar} size={cart.length} />;
 }
 
 export default App;
