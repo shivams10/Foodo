@@ -1,11 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+
+import Navbar from "./components/navbar";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-    </div>
-  );
+  const [navVisible, showNavbar] = useState(false);
+
+  return <Navbar visible={navVisible} show={showNavbar} size={cart.length} />;
 }
 
 export default App;
