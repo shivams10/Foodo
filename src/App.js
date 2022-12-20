@@ -1,10 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+
+import Navbar from "./components/navbar";
+import "./App.css";
 
 function App() {
+  const [navVisible, showNavbar] = useState(false);
+
   return (
-    <div className="App">
-    </div>
+    <>
+      <Navbar visible={navVisible} show={showNavbar} size={cart.length} />
+    </>
   );
 }
 

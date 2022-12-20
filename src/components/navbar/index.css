@@ -1,0 +1,137 @@
+nav {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 200px;
+    min-height: 100vh;
+    background-color: #753ffd;
+    padding: 2rem 1rem 5rem 1rem;
+    transition: transform 1s;
+    z-index: 9999;
+    margin-top: 49px;
+  }
+  
+  .navbar {
+    transform: translateX(-100%);
+  }
+  
+  .nav-button {
+    position: absolute;
+    transform: translateX(38px);
+    top: 0;
+    right: -20px;
+    width: 40px;
+    height: 60px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #753ffd;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  .logo {
+    display: block;
+    width: 100px;
+    margin: auto;
+    background: transparent;
+    border-radius: 80px;
+  }
+  
+  .logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .nav-link {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 1rem;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .nav-link:hover {
+    background-color: #afb4ff;
+    color: #4e4e4e;
+  }
+  
+  .nav-link span {
+    margin-left: 10px;
+  }
+  
+  .nav-top {
+    margin-top: 10rem;
+  }
+  
+  .mobile-nav {
+    background-color: #753ffd;
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 999;
+    margin-top: 45px;
+  }
+  
+  .mobile-nav-button {
+    color: #fff;
+    background: transparent;
+    outline: none;
+    border: none;
+    margin: 0 10px;
+    display: none;
+  }
+  
+  .shopping-cart{
+      color: white;
+      margin-right: 10px;
+  }
+  
+  .cart-quantity{
+      color: white;
+  }
+  
+  .menu-option{
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    nav {
+      width: 200px;
+      padding: 10px 0px 78px;
+    }
+  }
+  
+  @media only screen and (max-width: 450px) {
+    .mobile-nav {
+      justify-content: space-between;
+    }
+    .mobile-nav-button {
+      display: flex;
+    }
+    nav {
+      width: 200px;
+      top: 60px;
+      min-height: calc(100vh - 38px);
+    }
+  
+    .nav-button {
+      display: none;
+    }
+  }
