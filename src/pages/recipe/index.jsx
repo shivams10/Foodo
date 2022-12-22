@@ -22,7 +22,7 @@ const Recipe = () => {
     document.body.classList.remove("active-modal");
   }
 
-  const search = (searchValue) => {
+  const searchRecipe = (searchValue) => {
     searchForRecipe(searchValue);
   };
 
@@ -57,7 +57,7 @@ const Recipe = () => {
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
           />
-          <button onClick={() => search(searchInput)}>Search</button>
+          <button onClick={() => searchRecipe(searchInput)}>Search</button>
         </div>
         {modal && (
           <div className="modal">
