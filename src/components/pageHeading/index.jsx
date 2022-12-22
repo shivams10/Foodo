@@ -1,9 +1,11 @@
-import"./index.css"
+import "./index.css"
 
-const PageHeading = () => {
+const PageHeading = (props) => {
   return (
-    <div>index</div>
+    <div className="heading-container">
+        <h1>{props.children}</h1>
+    </div>
   )
 }
 
-export default PageHeading
+export default PageHeading;
