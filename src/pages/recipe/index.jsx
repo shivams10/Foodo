@@ -7,7 +7,7 @@ const Recipe = () => {
 
   const [loading, setLoading] = useState(false);
   const [ingredientList, setIngredientList] = useState([]);
-  const inputRef = useRef(null);
+  const [searchInput, setSearchInput] = useState("");
   const [modal, setModal] = useState(false);
   const [recipeSteps, setRecipeSteps] = useState([]);
   const [label, setLabel] = useState("");
@@ -22,10 +22,10 @@ const Recipe = () => {
     document.body.classList.remove("active-modal");
   }
 
-  const search = () => {
-    searchForRecipe(inputRef.current.value);
-    inputRef.current.value = "";
+  const search = (searchValue) => {
+    searchForRecipe(searchValue);
   };
+
 
   const searchForRecipe = (query) => {
     setLoading(true);
@@ -52,8 +52,12 @@ const Recipe = () => {
       <PageHeading>Recipe</PageHeading>
       <header className="recipe-header">
         <div className="input-wrapper">
-          <input ref={inputRef} placeholder="Search for Recipe" />
-          <button onClick={search}>Search</button>
+        <input
+            placeholder="Search for Recipe"
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+          />
+          <button onClick={() => search(searchInput)}>Search</button>
         </div>
         {modal && (
           <div className="modal">
