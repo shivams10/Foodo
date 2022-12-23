@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react";
 import { BsSearch } from "react-icons/bs";
+import { Food } from "../../assets/Food"
 
 import "./index.css";
 import buttonList from "../../assets/buttonCategories/categories.json";
-import useAxios from "../../customHooks/useAxios";
 import PageHeading from "../../components/pageHeading";
 import ProductCard from "../../components/productCard";
 
-const Store = ({ handleClick, warning }) => {
-  const axiosInstance = useAxios();
+const Store = ({ handleClick }) => {
 
   const [productData, setProductData] = useState([]);
   const [filteredResults, setFilteredResults] = useState([]);
@@ -32,12 +31,6 @@ const Store = ({ handleClick, warning }) => {
     }
   };
 
-  function getResponse() {
-    axiosInstance
-      .then((respponse) => setProductData(respponse.data))
-      .catch((error) => console.log(error));
-  }
-
   const filterItem = (categoryItem, name) => {
     const updateItem = productData.filter((currentItem) => {
       return currentItem.category === categoryItem;
@@ -48,8 +41,8 @@ const Store = ({ handleClick, warning }) => {
   };
 
   useEffect(() => {
-    getResponse();
-  }, [searchInput]);
+    setProductData(Food)
+  }, []);
 
   return (
     <>
@@ -84,28 +77,18 @@ const Store = ({ handleClick, warning }) => {
           ? filteredResults.map((item) => {
               return (
                 <ProductCard
-                  key={item.id}
-                  id={item.id}
-                  handleClick={handleClick}
-                  name={item.name}
-                  price={item.price}
-                  rating={item.rating}
-                  image={item.image}
-                  amount={item.amount}
+                key={item.id}
+                details={item}
+                handleClick={handleClick}
                 />
               );
             })
           : productData.map((item) => {
               return (
                 <ProductCard
-                  key={item.id}
-                  id={item.id}
-                  handleClick={handleClick}
-                  name={item.name}
-                  price={item.price}
-                  rating={item.rating}
-                  image={item.image}
-                  amount={item.amount}
+                key={item.id}
+                details={item}
+                handleClick={handleClick}
                 />
               );
             })}
