@@ -1,9 +1,6 @@
-import React from 'react'
+import axios from "axios";
 
-const useAxios = () => {
-  return (
-    <div>useAxios</div>
-  )
+ function useAxios() {
+  return axios.get("/Food.json");
 }
-
-export default useAxios
+export default useAxios;
