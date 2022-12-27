@@ -5,8 +5,9 @@ import { BsStarFill } from "react-icons/bs";
 import "./index.css";
 
 const ProductCard = (props) => {
-  const { name, price, rating, image, amount, handleClick, id } =
-    props;
+
+  const { handleClick, details } = props;
+  const { name, price, rating, image, amount, id } = details;
 
   return (
     <div className="product-card">

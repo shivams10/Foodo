@@ -9,30 +9,28 @@ function App() {
   const [cart, setCart] = useState([]);
   const [warning, setWarning] = useState(false);
 
-  const handleClick = (item)=>{
-	var isPresent = false;
-	cart.forEach((product)=>{
-		if (item.id === product.id){
-			isPresent = true;
-			setWarning(true);
-		}
-	})
-	if (isPresent){
-		alert("item already present")
-		return ;
-	}
-	setCart([...cart, item]);
-}
+  const handleClick = (item) => {
+    var isPresent = false;
+    cart.forEach((product) => {
+      if (item.id === product.id) {
+        isPresent = true;
+        setWarning(true);
+        alert(`${item.name} is already present`);
+        return;
+      }
+    });
+    setCart([...cart, item]);
+  };
 
   return (
     <>
       <Navbar visible={navVisible} show={showNavbar} size={cart.length} />
       <Routes>
-      <Route
+        <Route
           path="/store"
           element={
             <div className={!navVisible ? "page" : "page page-with-navbar"}>
-              <Store handleClick={handleClick} warning={warning}/>
+              <Store handleClick={handleClick} warning={warning} />
             </div>
           }
         />
