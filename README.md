@@ -30,5 +30,4 @@
 ![Screenshot 2023-01-26 at 5 52 10 PM](https://user-images.githubusercontent.com/114575564/214836234-4820a541-b13e-4f67-84fc-d41a36664e22.png)
 ![Screenshot 2023-01-26 at 5 52 41 PM](https://user-images.githubusercontent.com/114575564/214836241-75a9b1d1-f5ad-4726-acde-253a4c2a1917.png)
 ![Screenshot 2023-01-26 at 5 53 07 PM](https://user-images.githubusercontent.com/114575564/214836243-6b9508d4-7934-43cd-bd38-200a3c2a071d.png)
-![Screenshot 2023-01-26 at 5 53 10 PM](https://user-images.githubusercontent.com/114575564/214836262-fb206c41-88c9-4868-b354-c49c351c0c5d.png)
 ![Screenshot 2023-01-26 at 5 57 25 PM](https://user-images.githubusercontent.com/114575564/214836291-7a1d210a-accc-4ecf-a683-0309ff850427.png)
