@@ -1,22 +1,23 @@
 # Foodo
 
-> An online food meal website using React.
+> An online food ordering and recipe finding website using Reactjs.
 
 ## Description
 
-- The site has 3 pages:-
+- The site has 6 pages:-
 
-1. The home page includes all the food items, a user can add food to the cart on this page.
-2. The service page includes all the services provided by company.
-3. The contact page with form validation.
-
-- Created a raw json data to fetch and display food item cards.
-- CRUD operation with Local Storage.
+1. The home page.
+2. The store includes all the food items, a user can add food to the cart on this page. Also user can search particular food by serach input or category filter.
+3. The cart page where user can update and delete items from the cart.
+4. The food description page where user can add reviews on particular food.
+5. The Recipe page where user can find recipes of a particular food.
+6. The contact page integrated with Email Js which helps in keep tracking of emails.
 
 ## Third Party Libraries
 
-1. **Font** : Font Awesome
-2. **Icon** : Font Awesome
+1. **Email Js** : For keep tracking of emails
+
+## npm start: to run
 
 ## --------------------------------------- Screen Shots ---------------------------------------
 
@@ -35,4 +36,3 @@
 ![Screenshot 2023-01-26 at 5 52 41 PM](https://user-images.githubusercontent.com/114575564/214836241-75a9b1d1-f5ad-4726-acde-253a4c2a1917.png)
 ![Screenshot 2023-01-26 at 5 53 07 PM](https://user-images.githubusercontent.com/114575564/214836243-6b9508d4-7934-43cd-bd38-200a3c2a071d.png)
 ![Screenshot 2023-01-26 at 5 57 25 PM](https://user-images.githubusercontent.com/114575564/214836291-7a1d210a-accc-4ecf-a683-0309ff850427.png)
-
