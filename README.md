@@ -1,4 +1,4 @@
-# Surprise Meal
+# Foodo
 
 > An online food meal website using React.
 
@@ -18,6 +18,7 @@
 1. **Font** : Font Awesome
 2. **Icon** : Font Awesome
 
+## --------------------------------------- Screen Shots ---------------------------------------
 
 ![Screenshot 2023-01-26 at 5 49 01 PM](https://user-images.githubusercontent.com/114575564/214835913-781215d5-59ff-4e9b-b0f4-5545c678c9b7.png)
 ![Screenshot 2023-01-26 at 5 49 15 PM](https://user-images.githubusercontent.com/114575564/214835928-8173a1ae-78c1-4e16-a24f-5fe9da43aa84.png)
