@@ -1,21 +1,50 @@
 import { useState, useEffect } from "react";
 import { BsSearch } from "react-icons/bs";
-import { Food } from "../../assets/Food"
+import axios from "axios";
+import { SyncLoader } from "react-spinners";
 
 import "./index.css";
 import buttonList from "../../assets/buttonCategories/categories.json";
 import PageHeading from "../../components/pageHeading";
 import ProductCard from "../../components/productCard";
+import { useAuthContext } from "../../context/authContext";
+import DummyImage from "../../assets/images/vegetable.webp";
 
-const Store = ({ handleClick }) => {
-
+const Store = ({ handleClick, isSelected }) => {
+  const [loading, setLoading] = useState(false);
   const [productData, setProductData] = useState([]);
   const [filteredResults, setFilteredResults] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [categoryUpdated, setCategoryUpdated] = useState(false);
   const [activeCategory, setActiveCategory] = useState("");
 
+  const { user } = useAuthContext();
+
+  function fetchFoodData() {
+    setLoading(true);
+    axios.get("http://localhost:1337/api/foods?populate=*").then((response) => {
+      const foodData = response.data.data.map((food) => {
+        const { name, category, rating, amount, price, description, image } =
+          food?.attributes;
+        return {
+          id: food?.id,
+          name,
+          category,
+          rating,
+          amount,
+          price,
+          description,
+          image: image.data? `http://localhost:1337${image?.data?.attributes?.url}`: DummyImage,
+        };
+      });
+      setProductData(foodData);
+      setLoading(false);
+    });
+  }
+
   const searchItems = (searchValue) => {
+    searchValue = searchValue.trim();
+    console.log(searchValue)
     setActiveCategory("");
     setSearchInput(searchValue);
     if (searchInput !== "") {
@@ -41,8 +70,10 @@ const Store = ({ handleClick }) => {
   };
 
   useEffect(() => {
-    setProductData(Food)
-  }, []);
+    if (user) {
+      fetchFoodData();
+    }
+  }, [user]);
 
   return (
     <>
@@ -72,27 +103,46 @@ const Store = ({ handleClick }) => {
           />
         </div>
       </div>
-      <div className="product-section">
-        {searchInput.length > 2 || categoryUpdated
-          ? filteredResults.map((item) => {
+      {loading ? (
+        <SyncLoader
+          color="hsla(261, 67%, 53%, 1)"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "10%",
+          }}
+        />
+      ) : (
+        <div className="product-section">
+          {searchInput.length > 2 || categoryUpdated ? (
+            filteredResults.length ? (
+              filteredResults.map((item) => {
+                return (
+                  <ProductCard
+                    key={item.id}
+                    details={item}
+                    handleClick={handleClick}
+                    isSelected={isSelected}
+                  />
+                );
+              })
+            ) : (
+              <h2 className="not-found">No Item found</h2>
+            )
+          ) : (
+            productData?.map((item) => {
               return (
                 <ProductCard
-                key={item.id}
-                details={item}
-                handleClick={handleClick}
+                  key={item.id}
+                  details={item}
+                  handleClick={handleClick}
+                  isSelected={isSelected}
                 />
               );
             })
-          : productData.map((item) => {
-              return (
-                <ProductCard
-                key={item.id}
-                details={item}
-                handleClick={handleClick}
-                />
-              );
-            })}
-      </div>
+          )}
+        </div>
+      )}
     </>
   );
 };

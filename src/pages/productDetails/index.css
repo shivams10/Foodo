@@ -1,0 +1,31 @@
+.description {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: aliceblue;
+  padding: 20px;
+  box-shadow: 0px 14px 32px 0px rgb(0 0 0 / 8%);
+}
+
+.container-image > img {
+  width: 200px;
+  padding: 5px 15px 5px 0;
+}
+
+.container-details span {
+  font-weight: bold;
+}
+
+.detail {
+  padding: 5px 0;
+}
+
+@media screen and (max-width: 480px) {
+  .description {
+    flex-direction: column;
+  }
+
+  .container-details{
+    padding: 20px 0;
+  }
+}

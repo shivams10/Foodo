@@ -1,16 +1,22 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 import "./index.css";
+import { API } from "../../constants";
 import PageHeading from "../../components/pageHeading";
+import { useAuthContext } from "../../context/authContext";
+import DummyImage from "../../assets/images/vegetable.webp";
 
 const Recipe = () => {
-
   const [loading, setLoading] = useState(false);
   const [ingredientList, setIngredientList] = useState([]);
   const [searchInput, setSearchInput] = useState("");
+  const [filteredResults, setFilteredResults] = useState([]);
   const [modal, setModal] = useState(false);
-  const [recipeSteps, setRecipeSteps] = useState([]);
+  const [recipeSteps, setRecipeSteps] = useState("");
   const [label, setLabel] = useState("");
+
+  const { user } = useAuthContext();
 
   const toggleModal = () => {
     setModal(!modal);
@@ -22,53 +28,61 @@ const Recipe = () => {
     document.body.classList.remove("active-modal");
   }
 
-  const searchRecipe = (searchValue) => {
-    searchForRecipe(searchValue);
-  };
-
-
-  const searchForRecipe = (query) => {
+  function fetchRecipeData() {
     setLoading(true);
-    let url = `search?q=${query}&app_id=${process.env.REACT_APP_API_ID}&app_key=${process.env.REACT_APP_API_KEY}`;
-    fetch(url, { mode: "no-cors" })
-      .then((response) => {
-        return response.json();
-      })
-      .then((response) => {
-        setIngredientList(response.hits);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.log("error", error);
-        setLoading(false);
+    axios.get(`${API}/recipes?populate=*`).then((response) => {
+      const recipeDsta = response.data.data.map((food) => {
+        const { name, steps, image } = food?.attributes;
+        return {
+          id: food?.id,
+          name,
+          steps,
+          image: image.data? `http://localhost:1337${image?.data?.attributes?.url}`: DummyImage,
+        };
       });
+      setIngredientList(recipeDsta);
+      setLoading(false);
+    });
+  }
+
+  const searchItems = (searchValue) => {
+    setSearchInput(searchValue);
+    if (searchInput !== "") {
+      const filteredData = ingredientList.filter((item) => {
+        return Object.values(item.name)
+          .join("")
+          .toLowerCase()
+          .includes(searchInput.toLowerCase());
+      });
+      setFilteredResults(filteredData);
+    } else {
+      setFilteredResults(ingredientList);
+    }
   };
 
   useEffect(() => {
-    searchForRecipe("chicken");
-  }, []);
+    if (user) {
+      fetchRecipeData();
+    }
+  }, [user]);
+
   return (
     <>
-      <PageHeading>Recipe</PageHeading>
+      <PageHeading>Recipes</PageHeading>
       <header className="recipe-header">
         <div className="input-wrapper">
-        <input
+          <input
             placeholder="Search for Recipe"
-            value={searchInput}
-            onChange={(e) => setSearchInput(e.target.value)}
+            onChange={(e) => searchItems(e.target.value)}
           />
-          <button onClick={() => searchRecipe(searchInput)}>Search</button>
+          <button>Search</button>
         </div>
         {modal && (
           <div className="modal">
             <div onClick={toggleModal} className="overlay"></div>
             <div className="modal-content">
               <h2>{label}</h2>
-              <ul>
-                {recipeSteps.map((item, index) => {
-                  return <li key={index}>{item}</li>;
-                })}
-              </ul>
+              <p>{recipeSteps}</p>
               <button className="close-modal" onClick={toggleModal}>
                 X
               </button>
@@ -79,25 +93,57 @@ const Recipe = () => {
           <p className="loading">Loading</p>
         ) : (
           <div className="wrapper">
-            {ingredientList.map(({ recipe }) => {
-              const { label, image, ingredientLines } = recipe;
-              return (
-                <div className="ingredient" key={recipe.label}>
-                  <span>{label}</span>
-                  <img src={image} />
-                  <button
-                    className="get-recipe-button"
-                    onClick={() => {
-                      toggleModal();
-                      setRecipeSteps(ingredientLines);
-                      setLabel(label);
-                    }}
-                  >
-                    Get Recipe
-                  </button>
-                </div>
-              );
-            })}
+            {searchInput.length > 2 ? (
+              <>
+                {filteredResults.length ? (
+                  <>
+                    {filteredResults?.map((recipe) => {
+                      const { name, image, steps } = recipe;
+                      return (
+                        <div className="ingredient" key={recipe.name}>
+                          <span>{name}</span>
+                          <img src={image} />
+                          <button
+                            className="get-recipe-button"
+                            onClick={() => {
+                              toggleModal();
+                              setRecipeSteps(steps);
+                              setLabel(name);
+                            }}
+                          >
+                            Get Recipe
+                          </button>
+                        </div>
+                      );
+                    })}
+                  </>
+                ) : (
+                  <>no matching results</>
+                )}
+              </>
+            ) : (
+              <>
+                {ingredientList?.map((recipe) => {
+                  const { name, image, steps } = recipe;
+                  return (
+                    <div className="ingredient" key={recipe.name}>
+                      <span>{name}</span>
+                      <img src={image} />
+                      <button
+                        className="get-recipe-button"
+                        onClick={() => {
+                          toggleModal();
+                          setRecipeSteps(steps);
+                          setLabel(name);
+                        }}
+                      >
+                        Get Recipe
+                      </button>
+                    </div>
+                  );
+                })}
+              </>
+            )}
           </div>
         )}
       </header>

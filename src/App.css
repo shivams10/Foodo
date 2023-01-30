@@ -28,3 +28,28 @@
     margin-left: 28%;
   }
 }
+@media only screen and (min-width: 860px){
+  .page-with-navbar{
+    width: 70%;
+    margin-left: 26%;
+  }
+}
+@media only screen and (min-width: 950px){
+  .page-with-navbar{
+    width: 70%;
+    margin-left: 25%;
+  }
+}
+@media only screen and (min-width: 1220px){
+  .page-with-navbar{
+    width: 70%;
+    margin-left: 24%;
+  }
+}
+
+@media only screen and (min-width: 1360px){
+  .page-with-navbar{
+    width: 74%;
+    margin-left: 20%;
+  }
+}

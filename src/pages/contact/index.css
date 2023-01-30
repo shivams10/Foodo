@@ -1,0 +1,98 @@
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-50deg, #c538f9, blue);
+    color: white;
+    border-radius: 20px;
+    padding: 40px 20px;
+}
+
+.form-image{
+    padding: 30px;
+}
+
+.form-image>img{
+    border-radius: 20px ;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin: 8px;
+}
+
+.form-group label{
+    font-size: 16px;
+    padding: 0px 0px 5px;
+}
+.form-group input {
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+.form-group textarea{
+    width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+.contact-button{
+    width: 120px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: #f86e51;
+}
+
+.contact-button:hover{
+    background-color: rgb(94, 192, 94);
+}
+
+@media screen and (max-width:790px){
+    .form{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:480px){
+    .form{
+        flex-direction: column;
+    }
+    .form-group input {
+        width: 200px;
+        height: 30px;
+    }
+    .form-group textarea {
+        width: 200px;
+    }
+    .form-image>img{
+        width: 200px;
+    }
+}
+
+@media screen and (max-width:900px){
+    .form-group input {
+        width: 250px;
+        height: 30px;
+    }
+    .form-group textarea {
+        width: 250px;
+    }
+    .form-image>img{
+        width: 180px;
+    }
+}
