@@ -1,160 +1,199 @@
 .wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ingredient {
+  width: 170px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 20px;
+  transition: 0.5s;
+  text-align: center;
+}
+
+.ingredient:hover {
+  box-shadow: 0 1px 4px 0 rgba(1, 0, 0, 1);
+}
+
+.ingredient img {
+  height: 80px;
+  width: 100px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.ingredient span {
+  font-size: 14px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-wrapper input {
+  width: 300px;
+  height: 40px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px;
+  border: 0px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+}
+.input-wrapper button {
+  height: 40px;
+  width: 80px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #753ffd;
+  color: white;
+}
+
+.input-wrapper button:hover {
+  background-color: lightgreen;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.get-recipe-button {
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  padding: 7px 10px;
+  border-radius: 20px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.get-recipe-button:hover {
+  background-color: #753ffd;
+  color: white;
+}
+
+body.active-modal {
+  overflow-y: hidden;
+}
+
+.btn-modal {
+  padding: 10px 20px;
+  display: block;
+  margin: 100px auto 0;
+  font-size: 18px;
+}
+
+.modal,
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.overlay {
+  background: rgba(49, 49, 49, 0.8);
+}
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  padding: 14px 28px;
+  border-radius: 15px;
+  padding: 40px;
+  background: white;
+  width: 600px;
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.modal-content > h2 {
+  text-align: center;
+  padding: 0 0 10px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 7px;
+  background-color: white;
+  box-shadow: 0 1px 4px 0 rgba(1, 0, 0, 0.6);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.close-modal:hover {
+  opacity: 0.8;
+}
+
+.swing-in-top-fwd {
+	-webkit-animation: swing-in-top-fwd 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: swing-in-top-fwd 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+@-webkit-keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
   }
-  
-  .ingredient {
-    width: 170px;
-    height: 200px;
-    border-radius: 10px;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    margin: 20px;
-    transition: 0.5s;
-    text-align: center;
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 1;
   }
-  
-  .ingredient:hover {
-    box-shadow: 0 1px 4px 0 rgba(1, 0, 0, 1);
+}
+@keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
   }
-  
-  .ingredient img {
-    height: 80px;
-    width: 100px;
-    border-radius: 10px;
-    margin: 10px;
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 1;
   }
-  
-  .ingredient span {
-    font-size: 14px;
-  }
-  
-  .input-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .input-wrapper input {
-    width: 300px;
-    height: 40px;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 20px;
-    border: 0px;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
-  }
-  .input-wrapper button {
-    height: 40px;
-    width: 80px;
-    border-radius: 10px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    background-color: #753ffd;
-    color: white;
-  }
-  
-  .input-wrapper button:hover {
-    background-color: lightgreen;
-  }
-  
-  .loading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .get-recipe-button {
-    cursor: pointer;
-    background-color: rgb(255, 255, 255);
-    border: none;
-    padding: 7px 10px;
-    border-radius: 20px;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
-  }
-  
-  .get-recipe-button:hover {
-    background-color: #753ffd;
-    color: white;
-  }
-  
-  body.active-modal {
-    overflow-y: hidden;
-  }
-  
-  .btn-modal {
-    padding: 10px 20px;
-    display: block;
-    margin: 100px auto 0;
-    font-size: 18px;
-  }
-  
-  .modal,
-  .overlay {
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: fixed;
-  }
-  
-  .overlay {
-    background: rgba(49, 49, 49, 0.8);
-  }
+}
+
+
+@media screen and (max-width: 780px) {
   .modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    line-height: 1.4;
-    padding: 14px 28px;
-    border-radius: 15px;
-    padding: 40px;
-    color: white;
-    background: #753ffd;
-    width: 600px;
-    height: 400px;
-    overflow-y: scroll;
+    width: 450px;
+    height: 300px;
   }
-  
-  .modal-content > h2 {
-    text-align: center;
-    padding: 0 0 10px;
+}
+
+@media screen and (max-width: 480px) {
+  .modal-content {
+    width: 90%;
+    height: 300px;
   }
-  
-  .close-modal {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 5px 7px;
-    background-color: white;
-    box-shadow: 0 1px 4px 0 rgba(1, 0, 0, 0.6);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .close-modal:hover {
-    opacity: 0.8;
-  }
-  
-  @media screen and (max-width: 780px) {
-    .modal-content {
-      width: 450px;
-      height: 300px;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .modal-content {
-      width: 90%;
-    }
-  }
+}

@@ -1,0 +1,126 @@
+.comment-form{
+    padding: 0 30px;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+
+.comment-list > h4{
+    color: black;
+    font-size: 24px;
+    border-bottom: 3px solid black;
+}
+
+.message ,.comment-name{
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+}
+
+.comment-name >input{
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.message > textarea{
+    height: 50px;
+    padding: 5px;
+    border-radius: 5px;
+    resize: none;
+}
+
+.comment-container{
+    margin-top: 1px;
+    color: white;
+    height: 435px;
+    padding: 20px 35px 90px;
+    background-color: #774af6;
+    border-radius: 10px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 73% 88%, 50% 75%, 0% 75%);
+}
+
+.submit-button{
+    margin: 10px 0 20px;
+    padding: 5px 10px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.submit-button:hover{
+    background-color: rgb(79, 201, 79);
+    color: white;
+}
+
+.comment-list{
+    width: 50%;
+}
+
+.comment-description{
+    padding: 20px 10px;
+    background-color:white;
+    margin: 10px 0 0;
+}
+
+.commented{
+    padding: 0 0 20px;
+    overflow: scroll;
+}
+
+.commenter{
+    text-align: right;
+}
+
+.delete{
+    display: flex;
+    justify-content: center;
+    background-color: #774af6;
+    color: white;
+    padding: 4px 10px;
+    margin-bottom: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.no-comment{
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+.stars{
+    color: orange;
+}
+
+@media screen and (max-width:780px) {
+    .comment-form{
+        flex-direction: column;
+        padding-top: 10px;
+    }
+    .comment-container{
+        width: 320px;
+        margin: 0 auto;
+    }
+    .comment-list{
+        width: 100%;
+    }
+}
+@media screen and (max-width:480px) {
+    .comment-container{
+        width: 100%;
+        margin: 2px auto 0;
+    }
+    .container-details{
+        padding: 20px;
+    }
+}
+
+.image-input{
+    margin-bottom: 6px ;
+}
+
+.commented-image > img{
+    width: 200px;
+    height: 200px;
+}

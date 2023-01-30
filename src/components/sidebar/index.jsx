@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import { GiRiceCooker } from "react-icons/gi";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   FaAngleRight,
   FaAngleLeft,
@@ -7,28 +10,55 @@ import {
   FaBars,
   FaWpforms,
 } from "react-icons/fa";
-import {GiRiceCooker} from "react-icons/gi"
-import { NavLink } from "react-router-dom";
-
 
 import "./index.css";
+import { useAuthContext } from "../../context/authContext";
+import { removeToken } from "../../helpers";
+import { AUTH_TOKEN } from "../../constants";
+import Header from "../header";
 
 const ICON_SIZE = 20;
 
 const Navbar = ({ visible, show, size }) => {
+  const [IsloggedIn, SetIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
+
+  const { user } = useAuthContext();
+
+  const handleLogout = () => {
+    removeToken();
+    SetIsLoggedIn(false);
+    // LogIn(false);
+    navigate("/sign-in");
+  };
+
+  useEffect(() => {
+    SetIsLoggedIn(localStorage.getItem(AUTH_TOKEN) ? true : false);
+    // if (IsloggedIn) {
+    //   LogIn(IsloggedIn);
+    // }
+  }, [user, IsloggedIn]);
 
   return (
     <>
-      <div className="mobile-nav">
+    <Header />
+      {IsloggedIn && <><div className="mobile-nav">
         <button className="mobile-nav-button" onClick={() => show(!visible)}>
           <FaBars size={24} />
         </button>
-        <NavLink to="/cart">
-          <div className="cart-quantity">
-            {size}
-            <FaShoppingCart size={24} className="shopping-cart" />
-          </div>
-        </NavLink>
+        <div className="navbar-items">
+          <NavLink to="/cart">
+            <div className="cart-quantity">
+              {size}
+              <FaShoppingCart size={24} className="shopping-cart" />
+            </div>
+          </NavLink>
+          
+            <button className="logout-button" onClick={handleLogout}>
+              Logout
+            </button>
+          
+        </div>
       </div>
       <nav className={!visible ? "navbar" : ""}>
         <button
@@ -36,7 +66,14 @@ const Navbar = ({ visible, show, size }) => {
           className="nav-button"
           onClick={() => show(!visible)}
         >
-          {!visible ? (<div className="menu-option"><FaAngleRight size={30} />menu</div>): (<FaAngleLeft size={30} />)}
+          {!visible ? (
+            <div className="menu-option">
+              <FaAngleRight size={30} />
+              Menu
+            </div>
+          ) : (
+            <FaAngleLeft size={30} />
+          )}
         </button>
         <div>
           <NavLink className="logo" to="/">
@@ -56,8 +93,8 @@ const Navbar = ({ visible, show, size }) => {
               <span>Cart</span>
             </NavLink>
             <NavLink to="/recipe" className="nav-link">
-            <GiRiceCooker size={ICON_SIZE} />
-                <span>Recipe</span>
+              <GiRiceCooker size={ICON_SIZE} />
+              <span>Recipe</span>
             </NavLink>
           </div>
         </div>
@@ -68,7 +105,7 @@ const Navbar = ({ visible, show, size }) => {
             <span>Contact</span>
           </NavLink>
         </div>
-      </nav>
+      </nav></>}
     </>
   );
 };
