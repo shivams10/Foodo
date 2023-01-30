@@ -1,0 +1,458 @@
+[
+  {
+    "id": 1,
+    "name": "Ambur Biryani",
+    "category": "biryani",
+    "rating": 4.3,
+    "price": 130,
+    "image": "https://img.freepik.com/premium-photo/restaurant-style-spicy-chicken-biryani-wooden-bowl-with-raita-salan-popular-indian-pakistani-food_466689-2201.jpg?w=360",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Hyderabadi Biryani",
+    "category": "biryani",
+    "rating": 4.3,
+    "price": 150,
+    "image": "data:image/jpeg;base64,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",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Egg Biryani",
+    "category": "biryani",
+    "rating": 4.3,
+    "price": 180,
+    "image":"https://thumbs.dreamstime.com/b/online-food-delivery-anda-pulao-egg-biryani-packed-plastic-box-restaurant-style-home-container-raita-salan-189573537.jpg",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Goan Fish Biryani",
+    "category": "biryani",
+    "rating": 4.3,
+    "price": 150,
+    "image":"https://angtnonions.com/wp-content/uploads/2015/12/Fish-Biryani.jpg",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Mutton Biryani",
+    "category": "biryani",
+    "rating": 4.3,
+    "price": 100,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Kamrupi Biryani",
+    "category": "biryani",
+    "rating": 4.3,
+    "price": 120,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Kashmiri Biryani",
+    "category": "biryani",
+    "rating": 4.3,
+    "price": 130,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Memoni Biryani",
+    "category": "biryani",
+    "rating": 4.3,
+    "price": 200,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Mughlai Biryani",
+    "category": "biryani",
+    "rating": 4.3,
+    "price": 150,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Chicken Roast",
+    "category": "chicken",
+    "rating": 4.3,
+    "price": 110,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Chicken Curry",
+    "category": "chicken",
+    "rating": 4.3,
+    "price": 100,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Chicken Do Pyaza",
+    "category": "chicken",
+    "rating": 4.3,
+    "price": 140,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Chicken Masala",
+    "category": "chicken",
+    "rating": 4.3,
+    "price": 120,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Handi Chicken",
+    "category": "chicken",
+    "rating": 4.3,
+    "price": 170,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Murgh Musallam",
+    "category": "chicken",
+    "rating": 4.3,
+    "price": 200,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Matar Paneer",
+    "category": "paneer",
+    "rating": 4.3,
+    "price": 150,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Palak Paneer",
+    "category": "paneer",
+    "rating": 4.3,
+    "price": 100,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+
+  {
+    "id": 18,
+    "name": "Shahi Paneer",
+    "category": "paneer",
+    "rating": 4.3,
+    "price": 50,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Paneer Do Pyaza",
+    "category": "paneer",
+    "rating": 4.3,
+    "price": 120,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Hyderabadi Paneer",
+    "category": "paneer",
+    "rating": 4.3,
+    "price": 80,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Paneer Lababdar",
+    "category": "paneer",
+    "rating": 4.3,
+    "price": 70,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Paneer Butter Masala",
+    "category": "paneer",
+    "rating": 4.3,
+    "price": 150,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Navratan Korma",
+    "category": "vegetable",
+    "rating": 4.3,
+    "price": 80,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Jalfrezi",
+    "category": "vegetable",
+    "rating": 4.3,
+    "price": 70,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Curry",
+    "category": "vegetable",
+    "rating": 4.3,
+    "price": 70,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Kolhapur",
+    "category": "vegetable",
+    "rating": 4.3,
+    "price": 100,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Masala",
+    "category": "vegetable",
+    "rating": 4.3,
+    "price": 90,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Pakora",
+    "category": "vegetable",
+    "rating": 4.3,
+    "price": 80,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Momos",
+    "category": "chinese",
+    "rating": 4.3,
+    "price": 89,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Chicken Manchurian",
+    "category": "chinese",
+    "rating": 4.3,
+    "price": 79,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Chili Chicken",
+    "category": "chinese",
+    "rating": 4.3,
+    "price": 150,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Chowmein",
+    "category": "chinese",
+    "rating": 4.3,
+    "price": 100,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Spring Roll",
+    "category": "chinese",
+    "rating": 4.3,
+    "price": 100,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Szechuan Chicken",
+    "category": "chinese",
+    "rating": 4.3,
+    "price": 110,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Fried Rice",
+    "category": "chinese",
+    "rating": 4.3,
+    "price": 89,
+    "image": "https://static.toiimg.com/photo/70041623.cms",
+    "amount": 1,
+    "description": [
+      { "type": "Freshly Prepared & Minimum Oil is used" },
+      { "serves": "2 people" }
+    ]
+  }
+]

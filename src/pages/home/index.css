@@ -1,0 +1,134 @@
+.home{
+    margin: 100px 0 0;
+}
+
+.banner {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 80px 0px 220px;
+  border-radius: 15px;
+  color: white;
+  background: linear-gradient(-50deg, #c538f9, blue);
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 75%,
+    75% 75%,
+    75% 100%,
+    50% 75%,
+    0% 75%
+  );
+}
+
+.banner-image > img {
+  width: 380px;
+  height: 280px;
+  border-radius: 30px;
+}
+
+.banner h3 {
+  font-size: 40px;
+}
+
+.banner-button {
+  width: 180px;
+  margin: 30px auto 0;
+  padding: 10px;
+  text-align: center;
+  border-radius: 15px;
+  border: none;
+  color: white;
+  font-size: 18px;
+  background-color: rgb(108, 214, 108);
+}
+
+.banner-button:hover {
+  transition: 0.1 ease;
+  background-color: aliceblue;
+  color: black;
+}
+
+.tracking-in-expand {
+	-webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .banner-image > img {
+    width: 330px;
+    height: 200px;
+  }
+  .banner h3 {
+    font-size: 35px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 1130px) {
+    .banner{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .banner h3 {
+        justify-content: center;
+      }
+}
+
+@media only screen and (max-width: 969px) {
+  .banner {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 60px 0px 180px;
+  }
+  .banner h3 {
+    justify-content: center;
+  }
+  .banner-button {
+    margin: 20px auto 30px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .banner-image > img {
+    width: 200px;
+    height: 120px;
+    padding: 0 10px;
+  }
+  .banner h3 {
+    font-size: 18px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .banner-button {
+    width: 130px;
+    margin-bottom: 15px;
+  }
+}

@@ -1,0 +1,15 @@
+.heading-container {
+  border-radius: 10px;
+  text-align: center;
+  background-color: #753ffd;
+  padding: 20px 0;
+  margin: 60px 0 15px;
+  color: white;
+  box-shadow: 0px 14px 32px 0px rgb(0 0 0 / 5%);
+}
+
+@media screen and (max-width:480px){
+    .heading-container {
+        font-size: 12px;
+    }
+}

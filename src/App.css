@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.App{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100vh;
+}
+
+.page{
+	flex-basis: 100%;
+  width: 83%;
+  margin: auto;
+	transition: margin-left 1s;
+  padding-top: 65px;
+}
+
+@media only screen and (min-width: 768px){
+  .page-with-navbar{
+    width: 70%;
+    margin-left: 28%;
+  }
+}
+@media only screen and (min-width: 860px){
+  .page-with-navbar{
+    width: 70%;
+    margin-left: 26%;
+  }
+}
+@media only screen and (min-width: 950px){
+  .page-with-navbar{
+    width: 70%;
+    margin-left: 25%;
+  }
+}
+@media only screen and (min-width: 1220px){
+  .page-with-navbar{
+    width: 70%;
+    margin-left: 24%;
+  }
+}
+
+@media only screen and (min-width: 1360px){
+  .page-with-navbar{
+    width: 74%;
+    margin-left: 20%;
+  }
+}

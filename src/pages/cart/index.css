@@ -1,0 +1,225 @@
+.cart-table{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    border-bottom: 2px solid  #753ffd;
+    padding: 0 0 5px 0;
+}
+
+.cart-image > img{
+    width: 50px;
+    height: 50px;
+}
+
+.cart-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.cart-image>p{
+    width: 40px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.cart-table div:nth-child(2) button{
+    padding: 5px 10px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+.cart-table div:nth-child(3) button{
+    padding: 5px 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border:none;
+    outline: none;
+    color: white;
+    background-color: #ef6d50;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.cart-table div:nth-child(3) button:hover{
+    background-color: darkseagreen;
+}
+.cart-table div:nth-child(3) .initial-price{
+    background-color: lightgreen;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.total-price{
+    display: flex;
+    justify-content: space-between;
+    margin:20px 0;
+}
+.total-price span:nth-child(1){
+    font-size: 1.5rem;
+    color: rgb(112, 174, 199);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.total-price span:nth-child(2){
+    font-size: 1.5rem;
+    color: green;
+    font-weight: bold;
+}
+
+.back{
+    padding: 10px 20px;
+    background-color: #753ffd;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 20px 5px 0;
+}
+.order{
+    padding: 10px 20px;
+    background-color: rgb(35, 205, 35);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 30px 10px 0 0;
+    border: 1px solid rgb(35, 205, 35);
+
+}
+
+.back:hover, .order:hover{
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.remove-button{
+    display: flex;
+    flex-direction: row;
+}
+
+.bounce-top {
+	-webkit-animation: bounce-top 0.9s both;
+	        animation: bounce-top 0.9s both;
+}
+
+@-webkit-keyframes bounce-top {
+    0% {
+      -webkit-transform: translateY(-45px);
+              transform: translateY(-45px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+      opacity: 1;
+    }
+    24% {
+      opacity: 1;
+    }
+    40% {
+      -webkit-transform: translateY(-24px);
+              transform: translateY(-24px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    65% {
+      -webkit-transform: translateY(-12px);
+              transform: translateY(-12px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    82% {
+      -webkit-transform: translateY(-6px);
+              transform: translateY(-6px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    93% {
+      -webkit-transform: translateY(-4px);
+              transform: translateY(-4px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    25%,
+    55%,
+    75%,
+    87% {
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    100% {
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+      opacity: 1;
+    }
+  }
+  @keyframes bounce-top {
+    0% {
+      -webkit-transform: translateY(-45px);
+              transform: translateY(-45px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+      opacity: 1;
+    }
+    24% {
+      opacity: 1;
+    }
+    40% {
+      -webkit-transform: translateY(-24px);
+              transform: translateY(-24px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    65% {
+      -webkit-transform: translateY(-12px);
+              transform: translateY(-12px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    82% {
+      -webkit-transform: translateY(-6px);
+              transform: translateY(-6px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    93% {
+      -webkit-transform: translateY(-4px);
+              transform: translateY(-4px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    25%,
+    55%,
+    75%,
+    87% {
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    100% {
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+      opacity: 1;
+    }
+  }
+  
+
+@media screen and (max-width:490px) {
+    .cart-image > p{
+        font-size: 14px;
+    }
+    .cart-table{
+        flex-direction: column;
+    }
+    .update-quantity{
+        margin: 10px 0;
+    }
+
+}
